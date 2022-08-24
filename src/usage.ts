@@ -5,13 +5,13 @@ function usage() {
   console.error(`
 Usage, if you only have curl, unzip and sh:
 
-         curl -fsSL https://raw.githubusercontent.com/hugojosefson/proxmox-root-on-encrypted-zfs/main/src/cli.ts \\
+         curl -fsSL https://raw.githubusercontent.com/octobi/proxmox-root-on-encrypted-zfs/main/src/cli.ts \\
          | sudo sh -s <command...>
 
 
 Usage, if you have deno:
 
-         sudo deno -A --unstable https://raw.githubusercontent.com/hugojosefson/proxmox-root-on-encrypted-zfs/main/src/cli.ts <command...>
+         sudo deno -A --unstable https://raw.githubusercontent.com/octobi/proxmox-root-on-encrypted-zfs/main/src/cli.ts <command...>
 
 
 Usage, if you have deno, and have cloned this git repo:
