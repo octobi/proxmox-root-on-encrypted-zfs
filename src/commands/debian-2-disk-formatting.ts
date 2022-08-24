@@ -157,7 +157,7 @@ if (smallestDiskAndSize === NO_SMALLEST_DISK_FOUND) {
 }
 
 console.log(`-----------------------------------------------5==========`);
-const largerDisks = disks.filter((disk) => disk !== smallestDiskAndSize.disk);
+const largerDisks = disks;
 console.log({ largerDisks });
 
 console.log(`-----------------------------------------------6==========`);
