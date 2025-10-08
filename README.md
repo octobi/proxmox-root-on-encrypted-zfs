@@ -5,9 +5,9 @@ with native encryption.
 
 This is a more automated way of following these guides:
 
-- [Debian Bookworm Root on ZFS](https://openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Bookworm%20Root%20on%20ZFS.html)
+- [Debian Trixie Root on ZFS](https://openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Bookworm%20Root%20on%20ZFS.html)
   (via [OpenZFS Documentation](https://openzfs.github.io/openzfs-docs/))
-- [Install Proxmox VE on Debian 12 Bookworm](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_12_Bookworm)
+- [Install Proxmox VE on Debian 13 Trixie](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_13_Trixie)
   (via [Proxmox VE official wiki](https://pve.proxmox.com/wiki))
 
 ## Opinionated
@@ -92,8 +92,8 @@ encryption key.
 Login as `root`.
 
 Continue manually at
-[Install Proxmox VE Kernel etc](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_12_Bookworm#Install_the_Proxmox_VE_Kernel)
-in the _Install Proxmox VE on Debian 12 Bookworm_ guide.
+[Install Proxmox VE Kernel etc](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_13_Trixie#Install_the_Proxmox_VE_Kernel)
+in the _Install Proxmox VE on Debian 13 Trixie_ guide.
 
 ## Opinionated: Specifics
 
@@ -198,7 +198,7 @@ Skip the rest;
 
 ### Proxmox VE
 
-#### Install a standard Debian 12 Bookworm (amd64)
+#### Install a standard Debian 13 Trixie (amd64)
 
 ##### Add an /etc/hosts entry for your IP address
 
@@ -220,6 +220,6 @@ Skip the rest;
   leaving it up to manual installation and configuration.
 
 See
-[Install Proxmox VE Kernel](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_12_Bookworm#Install_the_Proxmox_VE_Kernel)
-and the following sections in the _Install Proxmox VE on Debian 12 Bookworm_
+[Install Proxmox VE Kernel](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_13_Trixie#Install_the_Proxmox_VE_Kernel)
+and the following sections in the _Install Proxmox VE on Debian 13 Trixie
 guide.
