@@ -5,7 +5,7 @@ with native encryption.
 
 This is a more automated way of following these guides:
 
-- [Debian Trixie Root on ZFS](https://openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Bookworm%20Root%20on%20ZFS.html)
+- [Debian (Bookworm) Root on ZFS](https://openzfs.github.io/openzfs-docs/Getting%20Started/Debian/Debian%20Bookworm%20Root%20on%20ZFS.html)
   (via [OpenZFS Documentation](https://openzfs.github.io/openzfs-docs/))
 - [Install Proxmox VE on Debian 13 Trixie](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_13_Trixie)
   (via [Proxmox VE official wiki](https://pve.proxmox.com/wiki))
@@ -68,6 +68,15 @@ sudo  NON_INTERACTIVE=true \
         https://raw.githubusercontent.com/hugojosefson/proxmox-root-on-encrypted-zfs/main/src/cli.ts \
         debian
 ```
+If the installation fails with an error about ZFS module not being loaded, try this first
+
+```bash
+sudo apt install -y zfs-dkms zfsutils-linux
+sudo apt install linux-headers-$(uname -r)
+sudo dpkg-reconfigure zfs-dkms
+sudo modprobe zfs
+```
+and then re-run the installation script.
 
 > If you want to inspect the chroot:
 >
