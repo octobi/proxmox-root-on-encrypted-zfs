@@ -32,12 +32,23 @@ Only do the first item in the list (until _Open a terminal_).
 > **Tip!**
 >
 > If you want to boot much faster, and get dropped into a shell immediately, you
-> may want to use `debian-live-12.*-amd64-standard.iso`! Download it from the
+> may want to use `debian-live-13.*-amd64-standard.iso`! Download it from the
 > same place as the other ISO:
 >
 > [https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/](https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/)
 >
 > Log in as `user`, with password `live`, if asked.
+
+Also, it might be helpful to install openssh and connect to it from another machine:
+```bash
+sudo apt install openssh-server
+```
+
+Make sure that the drives you want to install to are empty, as the script will only use the free (unformatted) space before and you might get errors due to lack of space:
+
+```bash
+wipefs -a /dev/disk-device
+```
 
 Instead of editing files etc. manually, launch this automated script from the
 terminal:
@@ -232,3 +243,14 @@ See
 [Install Proxmox VE Kernel](https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_13_Trixie#Install_the_Proxmox_VE_Kernel)
 and the following sections in the _Install Proxmox VE on Debian 13 Trixie
 guide.
+
+#### Additional notes about Dropbear
+- use ```zfsunlock``` to get the password prompt when you login to Dropbear-initramfs
+- use the user 'root' 
+- to generate a compatible key (run on a client computer): ```ssh-keygen -t rsa -f ~/.ssh/pve-dropbear```
+- then copy the generated .pub to ``` /etc/dropbear/initramfs/authorized_keys```
+- if you want dropbear to only ask for the password, add this in front of the public key in auhtorized_keys:
+``` no-port-forwarding,no-agent-forwarding,command="/bin/zfsunlock" ssh-rsa ...```
+- to update initramfs after updating the key, run
+``` update-initramfs -u -k all ```
+
