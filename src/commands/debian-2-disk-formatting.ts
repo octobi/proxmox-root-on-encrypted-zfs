@@ -44,8 +44,7 @@ async function resolvePartitionSize(
     return resolved;
   }
   throw new Error(
-    `size was neither Deferred, Promise, nor string: ${
-      JSON.stringify(partitionSize)
+    `size was neither Deferred, Promise, nor string: ${JSON.stringify(partitionSize)
     }`,
   );
 }
@@ -134,7 +133,7 @@ console.log(`-----------------------------------------------1==========`);
 const disks: string[] = await getDisks();
 const isSingleDisk = disks.length === 1;
 const poolType = isSingleDisk ? [] : ["mirror"];
-const copies = isSingleDisk ? ["copies=2"] : [];
+const copies = isSingleDisk ? ["copies=1"] : [];
 console.log({ disks });
 
 console.log(`-----------------------------------------------2==========`);
